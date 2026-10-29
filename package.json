@@ -1,0 +1,47 @@
+{
+  "name": "egypt-price-scraper",
+  "version": "0.1.0",
+  "description": "Search one product across Egyptian online shops and get normalized EGP prices.",
+  "license": "MIT",
+  "author": "Ahmed Osama Helmy",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "egypt-price-scraper": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "egypt",
+    "price",
+    "scraper",
+    "ecommerce",
+    "price-comparison",
+    "egp"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "search": "tsx src/cli.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
