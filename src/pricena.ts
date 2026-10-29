@@ -44,10 +44,14 @@ export function parsePricenaOffers(html: string, productUrl: string, query: stri
   const out: Listing[] = []
   const image = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1] ?? null
   // The page's own product id ends its URL; the "related products" strip has buttons for other products.
+  // Since late 2026 product URLs carry no id; the page's own offers are then
+  // the "store-grid" buttons, and a "product" strip lists other products.
   const pageId = productUrl.match(/-(\d{5,})(?:[/?#]|$)/)?.[1] ?? null
+  const hasGrid = /data-ref3="store-grid"/.test(html)
   for (const m of html.matchAll(/<button[^>]*class="green-button"[^>]*>/g)) {
     const tag = m[0]
     if (/data-ref3="related/i.test(tag)) continue
+    if (hasGrid && !/data-ref3="store-grid"/.test(tag)) continue
     const pid = tag.match(/data-product="(\d+)"/)?.[1]
     if (pageId && pid && pid !== pageId) continue
     const store = decode(tag.match(/data-storename="([^"]*)"/)?.[1] ?? '').trim()

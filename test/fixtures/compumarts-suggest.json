@@ -1,0 +1,131 @@
+{
+ "resources": {
+  "results": {
+   "products": [
+    {
+     "available": true,
+     "compare_at_price_max": "1349.00",
+     "compare_at_price_min": "0.00",
+     "handle": "logitech-g102-light-gaming-customizable-lighting",
+     "id": 7627664392341,
+     "image": "https://cdn.shopify.com/s/files/1/0622/7050/5109/products/Logitech-G102-LIGHTSYNC_01.jpg?v=1660694379",
+     "price": "899.00",
+     "price_max": "1349.00",
+     "price_min": "899.00",
+     "tags": [
+      "Accessories",
+      "Accessory",
+      "Logitech",
+      "Mouse",
+      "Wired"
+     ],
+     "title": "Logitech® G102 LIGHTSYNC Gaming Mouse - BLACK - EER",
+     "type": "Mice",
+     "url": "/products/logitech-g102-light-gaming-customizable-lighting?_pos=1&_psq=logitech+g102&_psid=95326e37b&_ss=e",
+     "variants": [],
+     "vendor": "Logitech",
+     "featured_image": {
+      "alt": "Logitech G102 LIGHTSYNC Gaming Mouse Black 8000 DPI LIGHTSYNC RGB",
+      "aspect_ratio": 1,
+      "height": 800,
+      "url": "https://cdn.shopify.com/s/files/1/0622/7050/5109/products/Logitech-G102-LIGHTSYNC_01.jpg?v=1660694379",
+      "width": 800
+     }
+    },
+    {
+     "available": false,
+     "compare_at_price_max": "0.00",
+     "compare_at_price_min": "0.00",
+     "handle": "logitech-g502-hero-gaming-mouse",
+     "id": 7627664228501,
+     "image": "https://cdn.shopify.com/s/files/1/0622/7050/5109/products/Logitech-G502-HERO-RGB-High-Performance_02.jpg?v=1676548553",
+     "price": "1899.00",
+     "price_max": "1899.00",
+     "price_min": "1899.00",
+     "tags": [
+      "100-25600 dpi",
+      "1000hz polling rate",
+      "11 programmable buttons",
+      "121g gaming mouse",
+      "1ms polling rate",
+      "2.1m cable",
+      "25600 dpi",
+      "3.6g weights",
+      "400 ips",
+      "5 profiles",
+      "910-005469",
+      "chromeos",
+      "compumarts",
+      "dual mode scroll wheel",
+      "g502 hero",
+      "gaming mouse",
+      "gaming mouse egypt",
+      "hero 25k",
+      "hero sensor",
+      "high performance gaming mouse",
+      "hyper fast scroll wheel",
+      "lightsync rgb",
+      "logitech",
+      "logitech g",
+      "logitech g hub",
+      "logitech g502 hero",
+      "macos 10.11",
+      "onboard memory",
+      "OUT-OF-STOCK",
+      "programmable gaming mouse",
+      "ptfe feet",
+      "tunable weight",
+      "usb wired mouse",
+      "windows 7",
+      "wired gaming mouse"
+     ],
+     "title": "Logitech G502 HERO High Performance Gaming Mouse 25,600 DPI HERO Sensor 11 Programmable Buttons LIGHTSYNC RGB 5 Profile Onboard Memory",
+     "type": "Mice",
+     "url": "/products/logitech-g502-hero-gaming-mouse?_pos=2&_psq=logitech+g102&_psid=95326e37b&_ss=e",
+     "variants": [],
+     "vendor": "Logitech",
+     "featured_image": {
+      "alt": "Logitech G502 HERO High Performance Gaming Mouse with HERO 25K sensor",
+      "aspect_ratio": 1,
+      "height": 800,
+      "url": "https://cdn.shopify.com/s/files/1/0622/7050/5109/products/Logitech-G502-HERO-RGB-High-Performance_02.jpg?v=1676548553",
+      "width": 800
+     }
+    },
+    {
+     "available": true,
+     "compare_at_price_max": "799.00",
+     "compare_at_price_min": "799.00",
+     "handle": "logitech-mk120-usb-keyboard-mouse",
+     "id": 7743573164181,
+     "image": "https://cdn.shopify.com/s/files/1/0622/7050/5109/files/LOGITECH-Corded-Desktop-MK120---NSEA---Arabic-layo_01.jpg?v=1786975962",
+     "price": "675.00",
+     "price_max": "675.00",
+     "price_min": "675.00",
+     "tags": [
+      "Accessories",
+      "Accessory",
+      "black",
+      "Keyboard",
+      "Logitech",
+      "Mouse",
+      "USB",
+      "Wired"
+     ],
+     "title": "LOGITECH MK120 CORDED KEYBOARD AND MOUSE COMBO",
+     "type": "Accessory Bundles",
+     "url": "/products/logitech-mk120-usb-keyboard-mouse?_pos=3&_psq=logitech+g102&_psid=95326e37b&_ss=e",
+     "variants": [],
+     "vendor": "Logitech",
+     "featured_image": {
+      "alt": "Logitech MK120 Corded Keyboard and Mouse Combo overview showing the black full size keyboard and optical mouse available at Compumarts Egypt",
+      "aspect_ratio": 1,
+      "height": 800,
+      "url": "https://cdn.shopify.com/s/files/1/0622/7050/5109/files/LOGITECH-Corded-Desktop-MK120---NSEA---Arabic-layo_01.jpg?v=1786975962",
+      "width": 800
+     }
+    }
+   ]
+  }
+ }
+}

@@ -89,10 +89,11 @@ export async function searchAll(query: string, opts: SearchOptions = {}): Promis
   const io = ioWithModel(opts.io ?? defaultIo)
   const timeoutMs = opts.timeoutMs ?? DEFAULT_TIMEOUT
   if (opts.shops) for (const id of opts.shops) if (!shopById(id)) throw new Error(`Unknown shop "${id}"`)
-  const selected = opts.shops ? SHOPS.filter(s => opts.shops!.includes(s.id)) : SHOPS
+  const usePricena = opts.pricena !== false
+  // Without Pricena, shops that are only read through it can't be searched at all.
+  const selected = (opts.shops ? SHOPS.filter(s => opts.shops!.includes(s.id)) : SHOPS).filter(s => usePricena || s.search)
   const match = opts.match === false ? () => true : opts.match ?? ((t: string) => titleMatches(t, query))
   const direct = selected.filter(s => s.search)
-  const usePricena = opts.pricena !== false
 
   const tasks: (() => Promise<Outcome>)[] = direct.map(s => () => settle(searchShop(s.id, query, { io, timeoutMs })))
   if (usePricena) tasks.push(() => settle(withTimeout(searchPricena(query, { io, match }), timeoutMs)))
@@ -105,7 +106,9 @@ export async function searchAll(query: string, opts: SearchOptions = {}): Promis
   const wanted = (source: string) => !opts.shops || opts.shops.includes(source)
   const fromPricena = pricena?.ok ? pricena.listings.filter(l => !hadDirect.has(l.source) && wanted(l.source)) : []
 
-  const listings = filterListings([...rawDirect, ...fromPricena], query, opts.refPrice ?? null, match)
+  // Pricena's offers come from product pages whose names already matched; their
+  // per-shop titles ("AirPods Pro 2nd Generation") may not, so they skip the title check.
+  const listings = filterListings([...rawDirect.filter(l => match(l.title)), ...fromPricena], query, opts.refPrice ?? null, () => true)
     .sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
 
   const sources: SourceOutcome[] = selected.map(s => {
@@ -118,7 +121,7 @@ export async function searchAll(query: string, opts: SearchOptions = {}): Promis
     }
     if (!r) {
       // Pricena-only shop.
-      if (!pricena || !pricena.ok) return { source: s.id, store: s.name, status: 'failed', via: 'pricena', count: 0, error: pricena ? errText((pricena as any).error) : 'Pricena disabled' }
+      if (pricena && !pricena.ok) return { source: s.id, store: s.name, status: 'failed', via: 'pricena', count: 0, error: errText(pricena.error) }
       return { source: s.id, store: s.name, status: 'none', via: 'pricena', count: 0 }
     }
     return { source: s.id, store: s.name, status: 'none', via: 'direct', count: 0 }

@@ -1,0 +1,76 @@
+{
+ "id": 8254840438923,
+ "title": "Apple iPhone 16",
+ "handle": "iphone-16",
+ "price": 5999000,
+ "price_min": 5999000,
+ "price_max": 7499000,
+ "available": true,
+ "featured_image": "//cdn.shopify.com/s/files/1/0741/2557/4283/files/iphone16-1_5919aa98-6505-4bb3-89d1-7009031dc96a.jpg?v=1779596120",
+ "options": [
+  {
+   "name": "RAM",
+   "position": 1,
+   "values": [
+    "8GB"
+   ]
+  },
+  {
+   "name": "Storage",
+   "position": 2,
+   "values": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  {
+   "name": "Color",
+   "position": 3,
+   "values": [
+    "Black",
+    "Teal",
+    "White",
+    "Pink",
+    "Purple"
+   ]
+  }
+ ],
+ "variants": [
+  {
+   "id": 47060780220555,
+   "title": "8GB / 128GB / Black",
+   "price": 7499000,
+   "available": true,
+   "featured_image": {
+    "src": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/iphone16-1_1.jpg?v=1779596120"
+   }
+  },
+  {
+   "id": 47060780449931,
+   "title": "8GB / 128GB / Teal",
+   "price": 7499000,
+   "available": true,
+   "featured_image": {
+    "src": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/2025-02-13t124441.886_3ab6fcc9-a100-453f-b8db-c35f9cdc0ecf.jpg?v=1779596120"
+   }
+  },
+  {
+   "id": 47060780286091,
+   "title": "8GB / 128GB / White",
+   "price": 7499000,
+   "available": true,
+   "featured_image": {
+    "src": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/2025-07-15t111712.509_1.jpg?v=1779596120"
+   }
+  },
+  {
+   "id": 47060780351627,
+   "title": "8GB / 128GB / Pink",
+   "price": 7499000,
+   "available": true,
+   "featured_image": {
+    "src": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/2025-04-26t134923.159_1.jpg?v=1779596120"
+   }
+  }
+ ]
+}

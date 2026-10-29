@@ -1,0 +1,53 @@
+{
+ "data": {
+  "products": {
+   "items": [
+    {
+     "name": "SAMSUNG Galaxy A56 Dual SIM, 128GB, 8GB RAM, 5G - Light Grey",
+     "url_key": "samsung-galaxy-a56-dual-sim-128gb-8gb-ram-5g-light-grey-10",
+     "stock_status": "IN_STOCK",
+     "small_image": {
+      "url": "https://prod-fastly.rayashop.com/media/catalog/product/cache/4e49ac3a70c0b98a165f3fa6633ffee1/g/9/g9ifwxcjlzbbslr5af33_easkrnvoni5jpbsv.jpg"
+     },
+     "price_range": {
+      "minimum_price": {
+       "final_price": {
+        "value": 23099
+       }
+      }
+     }
+    },
+    {
+     "name": "SAMSUNG Galaxy A56 Dual SIM - 5G",
+     "url_key": "samsung-galaxy-a56-dual-sim-5g",
+     "stock_status": "IN_STOCK",
+     "small_image": {
+      "url": "https://rayashop.hypernode.io/static/version1793255711/frontend/Magento/luma/en_US/Magento_Catalog/images/product/placeholder/small_image.jpg"
+     },
+     "price_range": {
+      "minimum_price": {
+       "final_price": {
+        "value": 23099
+       }
+      }
+     }
+    },
+    {
+     "name": "SAMSUNG Galaxy A56 Dual SIM, 256GB, 8GB RAM, 5G - Awesome Olive",
+     "url_key": "samsung-galaxy-a56-dual-sim-256gb-8gb-ram-5g-awesome-olive-12",
+     "stock_status": "IN_STOCK",
+     "small_image": {
+      "url": "https://prod-fastly.rayashop.com/media/catalog/product/cache/4e49ac3a70c0b98a165f3fa6633ffee1/m/b/mbugcij4hcz76hu4vlnv_ickyywjtdpb59gui.jpg"
+     },
+     "price_range": {
+      "minimum_price": {
+       "final_price": {
+        "value": 27299
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

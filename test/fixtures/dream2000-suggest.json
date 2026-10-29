@@ -1,0 +1,99 @@
+{
+ "resources": {
+  "results": {
+   "products": [
+    {
+     "available": true,
+     "compare_at_price_max": "0.00",
+     "compare_at_price_min": "0.00",
+     "handle": "araree-a-fit-for-iphone-16-pro-max-clear",
+     "id": 8255090491531,
+     "image": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/new_project_33__3_18.png?v=1779603283",
+     "price": "300.00",
+     "price_max": "300.00",
+     "price_min": "300.00",
+     "tags": [
+      "8809961115943",
+      "collection:accessories",
+      "collection:covers",
+      "collection:mobile-accessories"
+     ],
+     "title": "Araree A-Fit For iPhone 16 Pro Max Clear",
+     "type": "",
+     "url": "/en/products/araree-a-fit-for-iphone-16-pro-max-clear?_pos=1&_psq=iphone+16&_psid=995f81328&_ss=e",
+     "variants": [],
+     "vendor": "Apple",
+     "featured_image": {
+      "alt": "Araree A-Fit For iPhone 16 Pro Max - Clear",
+      "aspect_ratio": 1,
+      "height": 800,
+      "url": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/new_project_33__3_18.png?v=1779603283",
+      "width": 800
+     }
+    },
+    {
+     "available": true,
+     "compare_at_price_max": "90000.00",
+     "compare_at_price_min": "70800.00",
+     "handle": "iphone-16",
+     "id": 8254840438923,
+     "image": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/iphone16-1_5919aa98-6505-4bb3-89d1-7009031dc96a.jpg?v=1779596120",
+     "price": "59990.00",
+     "price_max": "74990.00",
+     "price_min": "59990.00",
+     "tags": [
+      "12KO15826",
+      "195949821967",
+      "195949822148",
+      "195949822322",
+      "195949822506",
+      "195949822681",
+      "195949822865",
+      "195949823220",
+      "195949823404",
+      "195949823589",
+      "collection:mobiles"
+     ],
+     "title": "Apple iPhone 16",
+     "type": "",
+     "url": "/en/products/iphone-16?_pos=5&_psq=iphone+16&_psid=995f81328&_ss=e",
+     "variants": [],
+     "vendor": "Apple",
+     "featured_image": {
+      "alt": "Apple Iphone 16 128GB - Black",
+      "aspect_ratio": 1,
+      "height": 800,
+      "url": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/iphone16-1_5919aa98-6505-4bb3-89d1-7009031dc96a.jpg?v=1779596120",
+      "width": 800
+     }
+    },
+    {
+     "available": true,
+     "compare_at_price_max": "39000.00",
+     "compare_at_price_min": "39000.00",
+     "handle": "huawei-nova-16s-dual-sim-256gb-12gb-ram-5g-with",
+     "id": 10357351481483,
+     "image": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/2_213f02d5-476b-4641-b775-b33d268ce553.jpg?v=1791371758",
+     "price": "32499.00",
+     "price_max": "32499.00",
+     "price_min": "32499.00",
+     "tags": [
+      "collection:mobiles"
+     ],
+     "title": "Huawei Nova 16s Dual Sim - 256GB, 12GB Ram, 5G with",
+     "type": "",
+     "url": "/en/products/huawei-nova-16s-dual-sim-256gb-12gb-ram-5g-with?_pos=9&_psq=iphone+16&_psid=995f81328&_ss=e",
+     "variants": [],
+     "vendor": "Huawei",
+     "featured_image": {
+      "alt": "Huawei Nova 16s Dual Sim - 256GB, 12GB Ram, 5G with",
+      "aspect_ratio": 1,
+      "height": 800,
+      "url": "https://cdn.shopify.com/s/files/1/0741/2557/4283/files/2_213f02d5-476b-4641-b775-b33d268ce553.jpg?v=1791371758",
+      "width": 800
+     }
+    }
+   ]
+  }
+ }
+}

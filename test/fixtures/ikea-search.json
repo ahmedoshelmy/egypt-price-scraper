@@ -1,0 +1,73 @@
+{
+ "searchResultPage": {
+  "products": {
+   "main": {
+    "items": [
+     {
+      "product": {
+       "name": "MICKE",
+       "typeName": "Desk",
+       "validDesignText": "white",
+       "itemMeasureReferenceText": "73x50 cm",
+       "ratingValue": 4.4,
+       "ratingCount": 49,
+       "onlineSellable": true,
+       "mainImageUrl": "https://www.ikea.com/eg/en/images/products/micke-desk-white__0736022_pe740349_s5.jpg",
+       "pipUrl": "https://www.ikea.com/eg/en/p/micke-desk-white-30213076/",
+       "salesPrice": {
+        "numeral": 5495
+       },
+       "availability": [
+        {
+         "status": "HIGH_IN_STOCK"
+        }
+       ]
+      }
+     },
+     {
+      "product": {
+       "name": "MICKE",
+       "typeName": "Desk",
+       "validDesignText": "white",
+       "itemMeasureReferenceText": "105x50 cm",
+       "ratingValue": 4.5,
+       "ratingCount": 61,
+       "onlineSellable": true,
+       "mainImageUrl": "https://www.ikea.com/eg/en/images/products/micke-desk-white__0736018_pe740345_s5.jpg",
+       "pipUrl": "https://www.ikea.com/eg/en/p/micke-desk-white-80213074/",
+       "salesPrice": {
+        "numeral": 9995
+       },
+       "availability": [
+        {
+         "status": "HIGH_IN_STOCK"
+        }
+       ]
+      }
+     },
+     {
+      "product": {
+       "name": "MICKE",
+       "typeName": "Desk",
+       "validDesignText": "white",
+       "itemMeasureReferenceText": "142x50 cm",
+       "ratingValue": 4.7,
+       "ratingCount": 22,
+       "onlineSellable": true,
+       "mainImageUrl": "https://www.ikea.com/eg/en/images/products/micke-desk-white__0736020_pe740347_s5.jpg",
+       "pipUrl": "https://www.ikea.com/eg/en/p/micke-desk-white-90214308/",
+       "salesPrice": {
+        "numeral": 9995
+       },
+       "availability": [
+        {
+         "status": "HIGH_IN_STOCK"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
+}
