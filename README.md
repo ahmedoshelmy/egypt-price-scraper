@@ -1,5 +1,7 @@
 # egypt-price-scraper
 
+[![CI](https://github.com/ahmedoshelmy/egypt-price-scraper/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmedoshelmy/egypt-price-scraper/actions/workflows/ci.yml)
+
 Search one product across about 20 Egyptian online shops and get the offers back as
 normalized listings: title, price in EGP, rating, stock note, link.
 
