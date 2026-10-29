@@ -38,7 +38,7 @@ const MAX_PRICENA_PAGES = 4
 
 function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
   let timer: ReturnType<typeof setTimeout>
-  const t = new Promise<never>((_, rej) => { timer = setTimeout(() => rej(new Error(`timed out after ${ms} ms`)), ms); timer.unref?.() })
+  const t = new Promise<never>((_, rej) => { timer = setTimeout(() => rej(new Error(`timed out after ${ms} ms`)), ms) })
   return Promise.race([p, t]).finally(() => clearTimeout(timer))
 }
 
