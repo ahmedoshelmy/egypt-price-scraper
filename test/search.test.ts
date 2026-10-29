@@ -103,3 +103,14 @@ test('Shopify shops expand storage variants when the query names a size', async 
   assert.ok(ls.some(l => l.title === 'Apple iPhone 16 8GB / 128GB / Black' && l.price === 74990))
   assert.ok(!ls.some(l => l.title === 'Apple iPhone 16'))
 })
+
+test('searchAll: Pricena fills in when the shop answered but nothing matched', async () => {
+  // Amazon's page has a 194 EGP "AirPods Pro 2" clone; with a quoted price of 10,000 it doesn't count,
+  // so Pricena's copy of Amazon's genuine offer is used.
+  const io = fakeIo([[/amazon\.eg/, 'amazon-search.html'], ...PRICENA])
+  const plain = await searchAll('airpods pro 2', { shops: ['amazon'], io })
+  assert.deepEqual(plain.listings.map(l => [l.price, l.via]), [[194, 'direct']])
+  const res = await searchAll('airpods pro 2', { shops: ['amazon'], io, refPrice: 10_000 })
+  assert.deepEqual(res.listings.map(l => [l.price, l.via]), [[10999, 'pricena']])
+  assert.equal(res.sources[0].via, 'pricena')
+})

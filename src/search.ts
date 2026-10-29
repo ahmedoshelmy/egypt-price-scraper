@@ -102,13 +102,16 @@ export async function searchAll(query: string, opts: SearchOptions = {}): Promis
 
   const byShop = new Map(direct.map((s, i) => [s.id, results[i]]))
   const rawDirect = direct.flatMap(s => { const r = byShop.get(s.id)!; return r.ok ? r.listings : [] })
-  const hadDirect = new Set(rawDirect.map(l => l.source))
+  const refPrice = opts.refPrice ?? null
+  const directMatched = filterListings(rawDirect, query, refPrice, match)
+  // Pricena fills in for a shop whose own search had no matching listing.
+  const hadDirect = new Set(directMatched.map(l => l.source))
   const wanted = (source: string) => !opts.shops || opts.shops.includes(source)
   const fromPricena = pricena?.ok ? pricena.listings.filter(l => !hadDirect.has(l.source) && wanted(l.source)) : []
 
   // Pricena's offers come from product pages whose names already matched; their
   // per-shop titles ("AirPods Pro 2nd Generation") may not, so they skip the title check.
-  const listings = filterListings([...rawDirect.filter(l => match(l.title)), ...fromPricena], query, opts.refPrice ?? null, () => true)
+  const listings = filterListings([...directMatched, ...fromPricena], query, refPrice, () => true)
     .sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
 
   const sources: SourceOutcome[] = selected.map(s => {

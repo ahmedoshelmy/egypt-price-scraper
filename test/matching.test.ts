@@ -73,3 +73,9 @@ test('rankListings: most reviewed first, then cheapest', () => {
   const out = rankListings([L('a', 300), L('b', 100, { ratingCount: 5 }), L('c', 200), L('d', 900, { ratingCount: 50 })])
   assert.deepEqual(out.map(l => l.title), ['d', 'b', 'c', 'a'])
 })
+
+import { CASES, MORE_CASES } from './fixtures/matchingCases.js'
+
+test('titleMatches on real shop titles (regression corpus)', () => {
+  for (const [q, title, want] of [...CASES, ...MORE_CASES]) assert.equal(titleMatches(title, q), want, `${q} | ${title}`)
+})

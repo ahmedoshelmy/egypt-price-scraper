@@ -13,6 +13,7 @@ Options:
   --category <c>     Only shops selling: laptops, phones, appliances, electronics, furniture
   --json             Print the full result as JSON
   --raw              Keep every listing, not only titles that match the query
+  --ref-price <egp>  Roughly what it costs: drops listings below 0.3x or above 3x (clones, bundles)
   --no-pricena       Don't use eg.pricena.com (fallback and Pricena-only shops)
   --timeout <s>      Seconds per shop (default 25)
   --list-shops       Print the supported shops and exit
@@ -24,7 +25,7 @@ const { values, positionals } = parseArgs({
   allowPositionals: true,
   options: {
     shops: { type: 'string' }, category: { type: 'string' }, json: { type: 'boolean' }, raw: { type: 'boolean' },
-    'no-pricena': { type: 'boolean' }, timeout: { type: 'string' }, 'list-shops': { type: 'boolean' }, help: { type: 'boolean', short: 'h' },
+    'no-pricena': { type: 'boolean' }, 'ref-price': { type: 'string' }, timeout: { type: 'string' }, 'list-shops': { type: 'boolean' }, help: { type: 'boolean', short: 'h' },
   },
 })
 
@@ -50,6 +51,7 @@ async function main() {
     shops,
     match: values.raw ? false : undefined,
     pricena: !values['no-pricena'],
+    refPrice: values['ref-price'] ? Number(values['ref-price']) : null,
     timeoutMs: values.timeout ? Number(values.timeout) * 1000 : undefined,
   })
   if (values.json) return void console.log(JSON.stringify(res, null, 2))

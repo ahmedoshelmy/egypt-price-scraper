@@ -27,7 +27,11 @@ export function isAccessory(title: string, toks: string[]): boolean {
     const before = t.slice(Math.max(0, m.index! - 40), m.index)
     if (/\bfor\s*$/.test(before)) return true
     // "Silicone Strap for Huawei Watch GT 6", "Case Compatible with…": made for the product.
-    if (/^\w*\s+(?:for|compatible)\b/.test(t.slice(m.index!))) return true
+    // ("Case forApple AirPods": shop titles glue words together.)
+    if (/^\w*\s+(?:for\b|for(?=apple|iphone|samsung|galaxy|huawei|xiaomi|airpods)|compatible\b)/.test(t.slice(m.index!))) return true
+    // "AirPods Pro 2 Silicone Case": a soft case or cover is sold for the product
+    // (a watch's "aluminium alloy case" is its body; a "silicone strap" comes with it).
+    if (/^(?:case|cover)$/.test(m[1]) && /\b(silicone|leather|tpu|protective|clear)\s*$/.test(before) && !/\bwith\b/.test(before)) return true
     // A list of what's in the box: "with 3 extras: precision head, Venus razor, zip pouch".
     const wider = t.slice(Math.max(0, m.index! - 90), m.index)
     if (INCLUDED.test(before) || (/\bwith\b/.test(wider) && !/\bfor\b/.test(wider))) continue
