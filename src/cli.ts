@@ -62,10 +62,12 @@ async function main() {
   else {
     console.log(`${'EGP'.padStart(11)}  ${'Shop'.padEnd(16)}  ${'Title'.padEnd(titleW)}  Link`)
     for (const l of res.listings) {
-      const note = l.sold === 'Out of stock' ? ' (out of stock)' : l.via === 'pricena' ? ' (via Pricena)' : ''
-      console.log(`${fmt(l.price).padStart(11)}  ${cut(l.store, 16)}  ${cut(l.title + note, titleW)}  ${l.url}`)
+      const shop = l.via === 'pricena' ? `${l.store}*` : l.store
+      const title = l.sold === 'Out of stock' ? `[out of stock] ${l.title}` : l.title
+      console.log(`${fmt(l.price).padStart(11)}  ${cut(shop, 16)}  ${cut(title, titleW)}  ${l.url}`)
     }
   }
+  if (res.listings.some(l => l.via === 'pricena')) console.log('* price from eg.pricena.com (the link opens Pricena)')
   const by = (st: string) => res.sources.filter(s => s.status === st).map(s => s.store)
   console.log(`\nfound: ${by('found').join(', ') || '—'}`)
   console.log(`none: ${by('none').join(', ') || '—'}`)

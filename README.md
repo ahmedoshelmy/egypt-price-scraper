@@ -5,13 +5,20 @@ normalized listings: title, price in EGP, rating, stock note, link.
 
 ```
 $ npx tsx src/cli.ts "logitech g102"
-        EGP  Shop              Title                                           Link
-        899  Compumarts        Logitech® G102 LIGHTSYNC Gaming Mouse - BLACK…  https://www.compumarts.com/products/…
-        999  Egypt Laptop      Logitech G102 Light Sync Gaming Mouse 910-00…   https://egyptlaptop.com/computers/…
-      1,000  Elnekhely Tech…   Logitech G102 LIGHTSYNC Gaming Mouse Black (o…  https://www.elnekhelytechnology.com/…
-…
-found: B.TECH, Amazon.eg, Noon, Compumarts, …
-none: Raneen, IKEA, …
+        EGP  Shop              Title                                                 Link
+        865  Noon              Logitech G102 Light Sync Gaming Mouse with Customi…   https://www.noon.com/egypt-en/…
+        869  Amazon.eg         Logitech G102 Light Sync Gaming Mouse with Customi…   https://www.amazon.eg/dp/B0895DY6F5
+        899  Compumarts        Logitech® G102 LIGHTSYNC Gaming Mouse - BLACK - EER   https://www.compumarts.com/products/…
+        950  El Badr Group     Logitech G102 LIGHTSYNC RGB 6 Button Gaming Mouse     https://elbadrgroupeg.store/…
+        999  Kimo Store        Logitech G102 Lightsync Wired RGB Gaming Mouse 800…   https://kimostore.net/products/…
+      1,000  Elnekhely Techn…  [out of stock] Logitech G102 LIGHTSYNC Gaming Mou…   https://www.elnekhelytechnology.com/…
+      1,049  2B                Logitech G102 Light sync Gaming Mouse EER910-00582…   https://2b.com.eg/en/…
+      1,099  B.TECH            Logitech G102 Wired Gaming Mouse , Black              https://btech.com/en/p/…
+      1,250  Dream 2000        Logitech Mouse Gaming Wired G102                      https://dream2000.com/en/products/…
+      …
+
+found: B.TECH, 2B, Amazon.eg, Noon, Jumia, Compumarts, Dream 2000, Raya Shop, Kimo Store, Elnekhely Technology, El Badr Group, Egypt Laptop
+none: Carrefour, Sigma Computer, Dubai Phone, Raneen, Hyper One, Maximum Hardware, IKEA, Homzmart
 ```
 
 Each shop is read with plain HTTP (its search page, search JSON or GraphQL endpoint).
@@ -67,7 +74,8 @@ npx tsx src/cli.ts --list-shops
 Or `npm run build` and use `node dist/cli.js` (the package's `bin` is `egypt-price-scraper`).
 
 Options: `--shops <ids>`, `--category <laptops|phones|appliances|electronics|furniture>`,
-`--json`, `--raw` (keep listings whose titles don't match), `--no-pricena`, `--timeout <s>`.
+`--json`, `--raw` (keep listings whose titles don't match), `--ref-price <egp>`, `--no-pricena`,
+`--timeout <s>`. Rows marked `*` come from Pricena and link to its product page.
 
 ## Library
 
@@ -97,6 +105,15 @@ Matching helpers are exported on their own: `titleMatches(title, query)`,
 
 `blocked` means the shop refuses your IP (Cloudflare 403 or challenge), not that it's down.
 From a home connection most shops answer; from a cloud VM several don't (see the table).
+
+## Limits
+
+Matching is by title words, so a clone titled "AirPods Pro 2 Wireless Earphones" at 200 EGP
+matches "airpods pro 2". When clones outnumber the real thing, the outlier filter (prices far
+from the median) can drop the real one instead. Pass a rough price (`--ref-price 10000`,
+`refPrice` in the library) to keep only listings between 0.3x and 3x of it.
+
+B.TECH returns only its first 20 results, and Shopify shops their first 10.
 
 ## Be gentle
 
